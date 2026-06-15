@@ -1,0 +1,12 @@
+@import '../../../styles/depth.css';
+@import '../../../styles/metrics.css';
+@import '../../../styles/colors.css';
+
+.publish-changes-button .icon-button {
+	background-color: var(--blue);
+    color: white;
+}
+
+.publish-changes-button .icon-button:hover {
+    background-color: green;
+}
