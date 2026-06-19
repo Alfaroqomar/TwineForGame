@@ -1,6 +1,7 @@
 import {PrefsState} from '../../../prefs';
 
 export async function load(): Promise<Partial<PrefsState>> {
+
 	const serialized = window.localStorage.getItem('twine-prefs');
 	const result: Partial<PrefsState> = {};
 

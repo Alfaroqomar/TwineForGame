@@ -1,10 +1,16 @@
 import {passageDefaults, storyDefaults} from '../../../stories/defaults';
 import {Passage, Story} from '../../../stories/stories.types';
 
+const GH_API = 'https://api.github.com';
+
 /**
  * Parses initial state from local storage.
  */
 export async function load(): Promise<Story[]> {
+	// instead of fetching from localStorage, we make a request to the GitHub repo and get the stories from there.
+
+	console.log('Fetching stories from GitHub API...');
+
 	const stories: Record<string, Story> = {};
 	const serializedStories = window.localStorage.getItem('twine-stories');
 
