@@ -17,10 +17,12 @@
 		"@lukeed/uuid": "^2.0.1",
 		"@popperjs/core": "^2.9.1",
 		"@tabler/icons": "^1.119.0",
+		"@y/websocket-server": "^0.1.5",
 		"classnames": "^2.2.6",
 		"codemirror": "^5.65.1",
 		"detect-it": "^4.0.1",
 		"eases": "^1.0.8",
+		"express": "^5.2.1",
 		"file-saver": "^2.0.5",
 		"focus-trap-react": "^8.9.2",
 		"focus-visible": "^5.2.0",
@@ -51,7 +53,12 @@
 		"segseg": "^1.0.0",
 		"semver": "^7.3.4",
 		"ua-parser-js": "^0.7.33",
-		"use-error-boundary": "^2.0.6"
+		"use-error-boundary": "^2.0.6",
+		"ws": "^8.21.0",
+		"y-indexeddb": "^9.0.12",
+		"y-webrtc": "^10.3.0",
+		"y-websocket": "^3.0.0",
+		"yjs": "^13.6.31"
 	},
 	"devDependencies": {
 		"@electron/notarize": "^2.1.0",

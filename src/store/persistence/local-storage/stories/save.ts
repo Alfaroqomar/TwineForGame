@@ -3,6 +3,7 @@
 // result, saving requires that you start and end a transaction manually. This
 // minimizes the number of writes to local storage.
 
+
 import {Passage, Story} from '../../../stories/stories.types';
 import {addUnique, remove} from '../comma-list';
 
@@ -24,6 +25,8 @@ export function doUpdateTransaction(updater: StorageUpdater) {
 		passageIds: window.localStorage.getItem('twine-passages') ?? '',
 		storyIds: window.localStorage.getItem('twine-stories') ?? ''
 	};
+
+	
 
 	updater(transaction);
 

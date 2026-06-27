@@ -1,5 +1,7 @@
 import * as React from 'react';
 import useThunkReducer from 'react-hook-thunk-reducer';
+import { registerDispatch, initSync } from '../../collaboration/storySync'
+import { persistence } from '../../collaboration/ydoc'
 import {usePersistence} from '../persistence/use-persistence';
 import {reducer} from './reducer';
 import {
@@ -41,6 +43,15 @@ export const StoriesContextProvider: React.FC = props => {
 		[formats, reportError, storiesPersistence]
 	);
 	const [stories, dispatch] = useThunkReducer(persistedReducer, []);
+	React.useEffect(() => {
+		console.log('[Stories] Registering dispatch with Yjs sync')
+		registerDispatch(dispatch)
+
+		persistence.on('synced', () => {
+			console.log('[Stories] Persistence synced, starting initSync')
+			initSync()
+		})
+		}, [dispatch])
 
 	return (
 		<StoriesContext.Provider value={{dispatch, stories}}>

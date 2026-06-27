@@ -9,8 +9,10 @@ import {StoryFormatsContextProvider} from './store/story-formats';
 import {StateLoader} from './store/state-loader';
 import {ThemeSetter} from './store/theme-setter';
 import './styles/typography.css';
+console.log('Yjs initialized, observing changes...')
 
 export const App: React.FC = () => (
+	
 	<GlobalErrorBoundary>
 		<PrefsContextProvider>
 			<LocaleSwitcher />

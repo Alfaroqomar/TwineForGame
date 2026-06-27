@@ -14,7 +14,7 @@ import {
 	savePassage,
 	saveStory
 } from './save';
-
+import { broadcastAction } from '../../../../collaboration/storySync'
 let lastState: StoriesState;
 
 /**
@@ -22,6 +22,9 @@ let lastState: StoriesState;
  * *after* the main reducer runs.
  */
 export function saveMiddleware(state: StoriesState, action: StoriesAction) {
+	console.log('[Middleware] saveMiddleware called with action:', action.type)
+	broadcastAction(action)
+	
 	switch (action.type) {
 		case 'init':
 		case 'repair':
